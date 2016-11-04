@@ -86,3 +86,37 @@ describe('Login with invalid account', function(){
     })
   })
 });
+
+describe('Login with correct account', function(){
+  it('Login Page respond to POST',function(){
+    var params = {
+            username: "pujari",
+            password: "pujari",
+        }
+        
+    superagent
+      .post('http://localhost:3000/login')
+      .send(params)
+      .end(function(res){
+        console.log(res.body);
+        expect(res.status).to.equal(200);
+    })
+  })
+});
+
+describe('Access profile when not logged in with account', function(){
+  it('Login Page respond to POST',function(){
+    var params = {
+            username: "The Lord of the Rings",
+            password: "J.R.R. Tolkien",
+        }
+        
+    superagent
+      .post('http://localhost:3000/home')
+      .send(params)
+      .end(function(res){
+        console.log(res.body);
+        expect(res.status).to.equal(200);
+    })
+  })
+});
