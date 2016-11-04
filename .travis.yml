@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "0.12"
+# command to install dependencies
+install:
+  - npm install
+script: npm test

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Expenses</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.onload = function() {
+        var sourses  = <%= source %>,
+            expenses = <%= expense %>;
+        
+        var count = Object.keys(sources).length;
+        
+        var allExpenses = "";
+        
+        for (var i = 0; i < count; i++) {
+            allExpenses += "<p><b>" + sources[i] + "</b> " + expenses[i] + "</p>";
+        }
+        document.getElementById("expenses").innerHTML = allExpenses;
+    }
+  </script>
+</head>
+<body>
+  <section class="container">
+    <div class="expenses">
+      <h1>Expenses</h1>
+      <div id="expenses"></div>
+    </div>
+  </section>
+</body>
+</html>
