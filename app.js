@@ -7,7 +7,6 @@ var express               =   require("express"),
     flash                 =   require('connect-flash');
 
 require('./config/passport')(passport);
-
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
